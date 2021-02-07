@@ -38,7 +38,7 @@ string* split(string str, int index)
 
 string uploadBufferFromFile(const char* path)
 {
-#pragma warning(disable : 4996) .
+#pragma warning(disable : 4996)
 	FILE* f = fopen(path, "r");
 	fseek(f, 0, SEEK_END);
 	int len = ftell(f);
