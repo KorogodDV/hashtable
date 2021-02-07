@@ -9,10 +9,12 @@ const int table_size = 250;
 int hash_func(string str)
 {
 	int h = 0;
+
 	for (int i = 0; i < str.length(); i++)
 	{
 		h += (int)(str[i]) / (i + 1);
 	}
+
 	return h;
 }
 
@@ -76,13 +78,16 @@ int main()
 {
 	vector<list<string>> table(table_size);
 	vector<string> words;
+
 	string text = uploadBufferFromFile("D:\\Проги\\hamlet.txt");
 	split(text, words, ' ');
-	//cout << text << "   " << words[0];
+
 	for (int i = 0; i < words.size(); i++)
 		table[hash_func(words[i]) % table_size].push_front(words[i]);
+
 	for (int i = 0; i < table_size; i++)
 		cout << i + 1 << " " << table[i].size() << endl;
+
 	return 0;
 }
 
