@@ -4,7 +4,7 @@
 #include <cassert>
 using namespace std;
 
-const int table_size = 250;
+const int table_size = 200;
 
 int hash_func(string str)
 {
