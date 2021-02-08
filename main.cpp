@@ -84,10 +84,14 @@ int main()
 
 	for (int i = 0; i < words.size(); i++)
 		table[hash_func(words[i]) % table_size].push_front(words[i]);
-
 	for (int i = 0; i < table_size; i++)
-		cout << i + 1 << " " << table[i].size() << endl;
-
+	{
+		//cout << table[i].size() << "   ";
+		table[i].sort();
+		table[i].unique();
+		//cout << "   " << table[i].size() << "    ";
+		cout << /*i + 1 << " " <<*/ table[i].size() << endl;
+	}
 	return 0;
 }
 
